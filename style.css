@@ -283,6 +283,29 @@ header .back-image {
   text-decoration: line-through;
 }
 
+.floating-btn {
+  position: fixed;
+  bottom: 40px;
+  right: auto;
+  left: auto;
+  z-index: 999;
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(100px);
+  pointer-events: none;
+}
+
+.floating-btn.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  min-width: 350px;
+  left: auto;
+  right: auto;
+}
+
 .main-button,
 button.main-button {
   min-width: 250px;
@@ -1073,11 +1096,20 @@ section {
   .header-text .main-button {
     width: 95vw;
   }
+  .title {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
   .title h2,
   #reviews .title h2 {
     display: flex;
     flex-wrap: wrap;
     font-size: 38px;
+    justify-content: center;
+    width: 100%;
   }
   .title span {
     font-size: 34px;
@@ -1205,10 +1237,15 @@ section {
     max-width: 315px;
   }
   .contact-container img {
-    max-width: 90vw;
+    max-width: 98vw;
+    width: 98vw;
   }
   #contacts .title {
     text-align: center;
     align-items: center;
+  }
+  .floating-btn.show {
+    min-width: 99vw;
+    bottom: 10px;
   }
 }
