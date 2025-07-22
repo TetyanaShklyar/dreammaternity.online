@@ -285,7 +285,7 @@ header .back-image {
 
 .floating-btn {
   position: fixed;
-  bottom: 40px;
+  bottom: 12px;
   right: auto;
   left: auto;
   z-index: 999;
@@ -301,8 +301,8 @@ header .back-image {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-  min-width: 350px;
-  left: auto;
+  min-width: 70vw;
+  left: 15vw;
   right: auto;
 }
 
@@ -1247,5 +1247,13 @@ section {
   .floating-btn.show {
     min-width: 99vw;
     bottom: 10px;
+    left: auto;
+  }
+  .sosial-icons {
+    gap: 10px;
+  }
+  .circle-icon {
+    width: 70px;
+    height: 70px;
   }
 }
