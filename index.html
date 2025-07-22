@@ -45,12 +45,15 @@
                 <img src="images/photo1.jpeg" alt="Тетяна Водоп’янова">
                 <h1><span>7</span> днів до впевненого материнства</h1>
                 <p class="text">Підходить для вагітних та мам дітей до 2 років</p>
-                <div class="main-button open-modal-btn">399 грн замість <span class="none">800 грн</span></div>
+                <div class="main-button open-modal-btn">399 грн замість <span class="none">800 грн</span>
+                </div>
 
             </div>
         </div>
 
     </header>
+    <div class="main-button open-modal-btn floating-btn">399 грн замість <span class="none">800 грн</span>
+    </div>
 
     <section id="whom">
         <img src="images/back2.png" alt="7 днів до впевненого материнства" class="back-image">
@@ -194,7 +197,7 @@
                 </div>
                 <div class="program-item program-item-btn">
                     <img src="images/icon.png" alt="icon">
-                    <div class="main-button">399 грн замість <span class="none">800 грн</span></div>
+                    <div class="main-button open-modal-btn">399 грн замість <span class="none">800 грн</span></div>
                 </div>
 
             </div>
@@ -268,7 +271,8 @@
                         повернути
                         кошти.
                     </p>
-                    <div class="main-button">Просто напиши мені про це</div>
+                    <a class="main-button" href="https://t.me/mrii_mariyi" target="_blank">Просто
+                        напиши мені про це</a>
                 </div>
             </div>
         </div>
@@ -438,12 +442,17 @@
             });
         });
 
-        document.querySelector('.open-modal-btn').addEventListener('click', () => {
-            document.getElementById('modal').classList.add('active');
+        document.querySelectorAll('.open-modal-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.getElementById('modal').classList.add('active');
+            });
         });
+
         document.getElementById('modalClose').addEventListener('click', () => {
             document.getElementById('modal').classList.remove('active');
         });
+
+
 
         function updateCountdown() {
             const now = new Date();
@@ -458,7 +467,31 @@
             document.getElementById('countdown').textContent = `${hours} год ${minutes} хв ${seconds} сек`;
         }
         setInterval(updateCountdown, 1000);
+
         updateCountdown();
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const floatingBtn = document.querySelector(".floating-btn");
+            const header = document.getElementById("header");
+            const contacts = document.getElementById("contacts");
+
+            window.addEventListener("scroll", function () {
+                const scrollY = window.scrollY || window.pageYOffset;
+
+                const headerBottom = header.offsetTop + header.offsetHeight;
+                const contactsTop = contacts.offsetTop;
+
+
+                const offsetBeforeContacts = 100;
+
+                if (scrollY > headerBottom && scrollY < contactsTop - offsetBeforeContacts) {
+                    floatingBtn.classList.add("show");
+                } else {
+                    floatingBtn.classList.remove("show");
+                }
+            });
+        });
+
 
 
     </script>
