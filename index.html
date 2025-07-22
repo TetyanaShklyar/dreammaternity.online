@@ -360,6 +360,9 @@
                     <a href="mailto:mriimarii23@gmail.com" class="circle-icon">
                         <i class="fa-solid fa-envelope"></i>
                     </a>
+                    <a href="https://www.tiktok.com/@mriyi_mariyi" target="_blank" class="circle-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -376,10 +379,13 @@
             <div class="price-info">
                 <strong>399 грн</strong> <span>замість 800 грн</span>
             </div>
-            <form action="https://formsubmit.co/mriimarii23@gmail.com" method="POST" class="modal-form">
+            <!-- <form action="https://formsubmit.co/mriimarii23@gmail.com" method="POST" class="modal-form"> -->
+            <form action="https://formsubmit.co/tetyana.shklyar@gmail.com" method="POST" class="modal-form">
                 <input type="text" name="name" placeholder="Ваше ім’я" required>
                 <input type="email" name="email" placeholder="E-mail" required>
                 <input type="tel" name="phone" placeholder="Ваш телефон" required>
+                <input type="hidden" name="_next" value="https://secure.wayforpay.com/button/bc33fd722daa0">
+                <input type="hidden" name="_captcha" value="false">
                 <button type="submit" class="main-button">Отримати доступ</button>
             </form>
             <p class="guarantee">
@@ -423,7 +429,7 @@
 
         const dateElement = document.querySelector('.date-tomorrow');
         const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
+        tomorrow.setDate(tomorrow.getDate());
 
         const options = { day: 'numeric', month: 'long' };
         const formatted = tomorrow.toLocaleDateString('uk-UA', options);
