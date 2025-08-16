@@ -1261,4 +1261,6 @@ section {
 .main-button {
   flex-direction: column;
   border-radius: 65px;
+      background: rgba(239, 178, 206, 0.79);
+    color: #fff;
 }
