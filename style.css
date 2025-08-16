@@ -1257,3 +1257,8 @@ section {
     height: 70px;
   }
 }
+
+.main-button {
+  flex-direction: column;
+  border-radius: 65px;
+}
